@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 20px;
+}
+
+
+.signupBox {
+  background: #ffffff;
+  padding: 30px 40px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupBox h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  color: #333;
+}
+
+.signupBox label {
+  font-weight: 600;
+  margin-top: 8px;
+  display: block;
+}
+
+.signupBox input,
+.signupBox select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.signupBox select {
+  width: 100%;
+}
+  
+
+.signupBox input:focus,
+.signupBox select:focus {
+  outline: none;
+  border-color: #43cea2;
+}
+
+.signupBox button {
+  width: 100%;
+  padding: 11px;
+  background: linear-gradient(135deg, #43cea2, #36b08c);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.signupBox button:hover {
+  opacity: 0.9;
+}
+
+.error {
+  min-height: 18px;
+  color: red;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.success {
+  color: green;
+}
+
+/* password eye toggle */
+.showPassword {
+    position: relative;
+}
+
+/* Eye icon */
+.showPassword span {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+    color: #666;
+    transition: color 0.2s;
+}
+.showPassword span:hover {
+    color: #4facfe;
+}

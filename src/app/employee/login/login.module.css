@@ -1,0 +1,118 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 20px;
+}
+
+.box {
+    background: #ffffff;
+    padding: 35px 30px;
+    width: 340px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.box input:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+}
+
+.box button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+}
+
+.error {
+    text-align: center;
+    color: #e63946;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Password toggle wrapper */
+.showPassword {
+    position: relative;
+}
+
+/* Eye icon */
+.showPassword span {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.showPassword span:hover {
+    color: #4facfe;
+}
+
+.dontHaveAccount {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.dontHaveAccount a {
+    color: #4facfe;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.dontHaveAccount a:hover {
+    text-decoration: underline;
+}
