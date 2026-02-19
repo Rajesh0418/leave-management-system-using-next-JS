@@ -44,14 +44,17 @@ public class ManagerController {
     @ResponseBody
     public ResponseEntity<Manager> login(@RequestBody Manager managerData) {
 
+        System.out.println(managerData.getEmail() +" "+managerData.getPassword()+" "+ managerData.getPhoneNumber());
         Manager manager = managerService.authenticate(
                 managerData.getEmail(),
+                managerData.getPhoneNumber(),
                 managerData.getPassword()
         );
 
         if (manager == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+        System.out.println(manager.toString());
 
         return ResponseEntity.ok(manager);
     }
@@ -199,3 +202,4 @@ public class ManagerController {
         return managerService.findManager(mid);
     }
 }
+
