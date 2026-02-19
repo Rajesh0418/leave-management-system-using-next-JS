@@ -67,7 +67,7 @@ const ManagerLoginPage = () => {
           )}
 
           <input
-            type="string"
+            type="text"
             name="email"
             placeholder="Email or password"
             value={credentials.email || credentials.phoneNumber}
@@ -102,3 +102,4 @@ const ManagerLoginPage = () => {
 };
 
 export default ManagerLoginPage;
+
