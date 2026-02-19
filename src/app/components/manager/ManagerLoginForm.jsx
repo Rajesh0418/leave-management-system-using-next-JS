@@ -14,6 +14,7 @@ const ManagerLoginPage = () => {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
+    phoneNumber: "",
   });
 
   const [invalidLogin, setInvalidLogin] = useState(false);
@@ -66,10 +67,10 @@ const ManagerLoginPage = () => {
           )}
 
           <input
-            type="email"
+            type="string"
             name="email"
-            placeholder="Email"
-            value={credentials.email}
+            placeholder="Email or password"
+            value={credentials.email || credentials.phoneNumber}
             onChange={handleChange}
             required
           />
