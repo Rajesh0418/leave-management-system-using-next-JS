@@ -12,9 +12,8 @@ const ManagerLoginPage = () => {
   
 
   const [credentials, setCredentials] = useState({
-    email: "",
+    login: "",
     password: "",
-    phoneNumber: "",
   });
 
   const [invalidLogin, setInvalidLogin] = useState(false);
@@ -30,24 +29,28 @@ const ManagerLoginPage = () => {
     setInvalidLogin(false);
 
     try {
-      const res = await fetch("http://localhost:8080/manager/login", {
+      const response = await fetch("http://localhost:8080/manager/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(credentials),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+          credentials
+        )
       });
 
-      if (!res.ok) {
+      if (!response.ok) {
         setInvalidLogin(true);
-        //throw new Error("Invalid login");
+        return;
       }
 
-      const data = await res.json();
+      const data = await response.json();
 
       console.log("Manager login successful:", data);
 
       sessionStorage.setItem("manager", JSON.stringify(data));
       setManager(data);
-            
+
       alert("Manager login successful!");
       router.push("/manager/profile");
     } catch (err) {
@@ -68,9 +71,9 @@ const ManagerLoginPage = () => {
 
           <input
             type="text"
-            name="email"
+            name="login"
             placeholder="Email or password"
-            value={credentials.email || credentials.phoneNumber}
+            value={credentials.login}
             onChange={handleChange}
             required
           />
@@ -102,4 +105,5 @@ const ManagerLoginPage = () => {
 };
 
 export default ManagerLoginPage;
+
 
