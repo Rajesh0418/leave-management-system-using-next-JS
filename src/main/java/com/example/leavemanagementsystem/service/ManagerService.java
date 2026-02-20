@@ -63,17 +63,17 @@ public class ManagerService {
         return repo.findById(mid).orElse(null);
     }
 
-    public Manager authenticate(String email, String phoneNumber,String rawPassword) {
+    public Manager authenticate(String login,String rawPassword) {
 
-        Manager manager=email!=null? repo.findByEmail(email).orElse(null)
-                :repo.findByPhoneNumber(phoneNumber).orElse(null);
+        Manager manager=(login!=null && login.contains("@"))? repo.findByEmail(login).orElse(null)
+                :repo.findByPhoneNumber(login).orElse(null);
 
         if (manager != null && passwordEncoder.matches(rawPassword, manager.getPassword())){
             return manager;
         }
-
         return null;
     }
 
 }
+
 
