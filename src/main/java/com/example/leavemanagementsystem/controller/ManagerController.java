@@ -44,10 +44,9 @@ public class ManagerController {
     @ResponseBody
     public ResponseEntity<Manager> login(@RequestBody Manager managerData) {
 
-        System.out.println(managerData.getEmail() +" "+managerData.getPassword()+" "+ managerData.getPhoneNumber());
+        System.out.println(managerData.getLogin() +" "+managerData.getPassword());
         Manager manager = managerService.authenticate(
-                managerData.getEmail(),
-                managerData.getPhoneNumber(),
+                managerData.getLogin(),
                 managerData.getPassword()
         );
 
@@ -202,4 +201,5 @@ public class ManagerController {
         return managerService.findManager(mid);
     }
 }
+
 
