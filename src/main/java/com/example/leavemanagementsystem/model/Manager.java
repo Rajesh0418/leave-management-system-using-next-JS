@@ -12,6 +12,11 @@ import java.util.List;
 @Entity
 public class Manager extends User {
 
+    @JsonIgnore
+    @Getter
+    @Setter
+    private String login;
+
     // Manager -> Employees
     @OneToMany(mappedBy = "manager", cascade = CascadeType.ALL)
     @JsonIgnore
@@ -24,3 +29,4 @@ public class Manager extends User {
     @Getter @Setter
     private List<LeaveRequest> handledRequests;
 }
+
